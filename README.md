@@ -1,5 +1,14 @@
 # dating-app
 Sonder dating app
+
+[Ссылка на изначальные дизайны](https://www.figma.com/file/iGbsQYQqZxrw0zTwC9uRo7/Dating-app---Free-UI-Kit-(Community)?type=design&node-id=1-2&mode=design)
+
+В проекте используется: ZegoCloud, Grpc, Protobuf,Firebase, Clean architecture, gps, Glide, Android Jetpack(ViewModels, ViewBinding, Navigation и т.д.), Hilt, EasyPermissions
+
+Архитектура приложения:
+
+![Архитектура приложения](https://github.com/Alex-Criwer/dating-app/assets/60827357/7faa26fc-2f30-4b38-957d-b199600452ea)
+
 ```
 MIT License
 
