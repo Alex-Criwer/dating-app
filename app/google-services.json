@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "236908489067",
+    "firebase_url": "https://sonder-dating-app-default-rtdb.firebaseio.com",
+    "project_id": "sonder-dating-app",
+    "storage_bucket": "sonder-dating-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236908489067:android:f828f82ef4f25060f6042e",
+        "android_client_info": {
+          "package_name": "com.example.sonder_dating_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236908489067-9s6mqkrfeu16jcgi5agnntt45b7jui7h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sonder_dating_app",
+            "certificate_hash": "4bd249557a91974e9c6532f3ae87e3ba9b2e0454"
+          }
+        },
+        {
+          "client_id": "236908489067-6umpoklf13f58fkl3fb3jt0cf5h50r44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhCoSdRLzdmwW4SU-gCsXlSsRNEDQ1mrM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236908489067-6umpoklf13f58fkl3fb3jt0cf5h50r44.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

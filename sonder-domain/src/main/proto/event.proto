@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "user.proto";
+
+package event;
+
+enum EEventType {
+  EET_UNKNOWn = 0;
+  EET_SEND_PUSH_MESSAGE = 1;
+  EET_SEND_PUSH_REACTION = 2;
+  EET_SEND_STREAM_MESSAGE = 3;
+  EET_SEND_STREAM_REACTION = 4;
+}
+
+message TEvent {
+  EEventType Type = 1;
+  repeated user.TMessage Messages = 2;
+  repeated user.TReaction Reactions = 3;
+}

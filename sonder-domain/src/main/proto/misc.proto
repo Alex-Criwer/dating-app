@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package misc;
+
+enum EReplyStatus {
+  ERS_UNKNOWN = 0;
+  ERS_OK = 1;
+  ERS_ERROR = 2;
+}
+
+message TErrorInfo {
+  enum EErrorType {
+    EET_UNKNOWN = 0;
+    EET_INTERNAL = 1;
+    EET_AUTHORIZATION = 2;
+    EET_AUTHENTIFICATION = 3;
+    EET_USER_DONT_REGISTERED = 4;
+    EET_STREAMING = 5;
+  }
+  // нужно будет добавить какую-нибудь типизацию ошибок - некорректный запрос / retryable ошибка и т.п
+
+  string Message = 1;
+  EErrorType Type = 2;
+
+}
+
+
+// здесь будет какая-то инфа для авторизации после аутентификации
+message TAuth {
+  string Token = 1;
+  // пока непонятно что здесь должно быть
+}

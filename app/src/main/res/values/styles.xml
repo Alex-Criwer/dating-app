@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MainFontStyle.Large" parent="@android:style/TextAppearance.Large">
+        <item name="android:fontFamily">@font/sk_modernist_regular</item>
+    </style>
+
+    <style name="MainFontStyle.ExtraLarge.Bold" parent="MainFontStyle.Large">
+        <item name="android:textSize">36sp</item>
+        <item name="android:fontFamily">@font/sk_modernist_bold</item>
+    </style>
+
+    <style name="MainFontStyle.Medium" parent="@android:style/TextAppearance.Medium">
+        <item name="android:fontFamily">@font/sk_modernist_regular</item>
+    </style>
+
+    <style name="MainFontStyle.Medium.Bold" parent="@android:style/TextAppearance.Medium">
+        <item name="android:fontFamily">@font/sk_modernist_bold</item>
+    </style>
+
+
+    <style name="MainFontStyle.Small" parent="@android:style/TextAppearance.Small">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/sk_modernist_regular</item>
+    </style>
+
+    <style name="MainFontStyle.Large.Bold" parent="MainFontStyle.Large">
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">@font/sk_modernist_bold</item>
+    </style>
+
+
+    <style name="AppTheme.PrimaryButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/rounded_shape</item>
+        <item name="android:textColor">@color/primary_white</item>
+        <item name="android:textAppearance">@style/MainFontStyle.Medium</item>
+    </style>
+
+    <style name="AppTheme.SecondaryButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/rounded_secondary_shape</item>
+        <item name="android:textColor">@color/primary_red</item>
+        <item name="android:textAppearance">@style/MainFontStyle.Medium</item>
+    </style>
+
+    <style name="AppTheme.SecondaryHobbyButtonNotSelected" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/sonder_hobby_shape_not_selected</item>
+        <item name="android:textColor">@color/primary_red</item>
+        <item name="android:textAppearance">@style/MainFontStyle.Small</item>
+    </style>
+
+    <style name="AppTheme.SecondaryHobbyButtonSelected" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/sonder_hobby_shape_selected</item>
+        <item name="android:textColor">@color/primary_red</item>
+        <item name="android:textAppearance">@style/MainFontStyle.Small</item>
+    </style>
+
+    <style name="AppTheme.SecondaryToggleButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/primary_red</item>
+        <item name="backgroundTint">@color/toggle_selector</item>
+        <item name="strokeColor">@color/primary_red</item>
+        <item name="android:textAppearance">@style/MainFontStyle.Medium</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_background</item>
+    </style>
+
+    <style name="SliderTooltip" parent="Widget.MaterialComponents.Tooltip">
+        <item name="android:textAppearance">@style/TextAppearance.Tooltip</item>
+        <item name="backgroundTint">@color/primary_red</item>
+    </style>
+
+    <style name="TextAppearance.Tooltip" parent="TextAppearance.MaterialComponents.Tooltip">
+        <item name="android:textColor">@color/primary_white</item>
+    </style>
+
+    <style name="circleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/signUpFragment">
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.sonder_dating_app.ui.fragments.sign_up.SignUpFragment"
+        android:label="sonder_sign_up_fragment"
+        tools:layout="@layout/sonder_sign_up_fragment" >
+        <action
+            android:id="@+id/action_signUpFragment_to_signUpWithPhoneNumber"
+            app:destination="@id/signUpWithPhoneNumber" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpOtpFragment"
+        android:name="com.example.sonder_dating_app.ui.fragments.sign_up.SignUpOtpFragment"
+        android:label="sonder_sign_up_otp_fragment"
+        tools:layout="@layout/sonder_sign_up_otp_fragment" >
+
+        <action
+            android:id="@+id/action_signUpOtpFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpWithPhoneNumber"
+        android:name="com.example.sonder_dating_app.ui.fragments.sign_up.SignUpWithPhoneNumber"
+        android:label="fragment_sign_up_with_phone_number"
+        tools:layout="@layout/sonder_sign_up_with_phone_number_fragment" >
+        <action
+            android:id="@+id/action_signUpWithPhoneNumber_to_signUpOtpFragment"
+            app:destination="@id/signUpOtpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profilesFragment"
+        android:name="com.example.sonder_dating_app.ui.fragments.suggested_profiles.SuggestedProfilesFragment"
+        android:label="fragment_profiles"
+        tools:layout="@layout/sonder_profiles_fragment" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.sonder_dating_app.ui.fragments.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/sonder_profile_fragment" />
+    <fragment
+        android:id="@+id/likesFragment"
+        android:name="com.example.sonder_dating_app.ui.fragments.likes.MatchesFragment"
+        android:label="fragment_likes"
+        tools:layout="@layout/sonder_matches_fragment" >
+        <action
+            android:id="@+id/action_likesFragment_to_chatFragment"
+            app:destination="@id/chatFragment">
+            <argument
+                android:name="user"
+                app:argType="com.example.sonder_domain.models.User"/>
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatsFragment"
+        android:name="com.example.sonder_dating_app.ui.fragments.chat.ChatsFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/sonder_chats_fragment" >
+
+        <action
+            android:id="@+id/action_chatsFragment_to_chatFragment"
+            app:destination="@id/chatFragment">
+            <argument
+                android:name="user"
+                app:argType="com.example.sonder_domain.models.User"/>
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.sonder_dating_app.ui.fragments.chat.ChatFragment"
+        android:label="sonder_chat_fragment"
+        tools:layout="@layout/sonder_chat_fragment">
+        <argument
+            android:name="user"
+            app:argType="com.example.sonder_domain.models.User"/>
+    </fragment>
+
+</navigation>

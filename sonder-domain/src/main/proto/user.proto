@@ -1,0 +1,113 @@
+syntax = "proto3";
+
+package user;
+// TODO не хардкодить префиксы путей, а задать их как опции енама
+enum EMediaType {
+  EMT_UNKNOWN = 0;
+  EMT_PHOTO = 1;
+  EMT_VIDEO = 2;
+  EMT_AUDIO = 3;
+}
+
+message TMetaMedia {
+
+  EMediaType Type = 1;
+  string Path = 2;
+}
+
+message TLoadingMedia {
+  enum ELoadType {
+    ELT_UNKNOWN = 0;
+    ELT_FULL = 1;
+    ELT_BY_PART = 2;
+  }
+
+  EMediaType Type = 1;
+  ELoadType LoadType = 2;
+  string Path = 3;
+  bytes Data = 4;
+  uint32 PartNumber = 5;
+}
+
+message TGeo {
+  double Latitude = 1;
+  double Longitude = 2;
+}
+
+enum EInterestType {
+  EIT_UNKNOWN = 0;
+  EIT_MATH = 1;         // математика
+  EIT_BOOKS = 2;        // чтение книг
+  EIT_MOVIES = 3;       // просмотр кино
+  EIT_PROGRAMMING = 4;  // программирование
+  EIT_WALKING = 5;      // прогулки на свежем воздухе
+  EIT_DRAWING = 6;      // рисование
+  EIT_IDLENESS = 7;     // ничегонеделанье
+}
+
+enum EGender {
+  EG_UNKNOWN = 0;
+  EG_MALE = 1;
+  EG_FEMALE = 2;
+}
+
+message TInterests {
+  message TInterest {
+    EInterestType Type = 1;
+    uint32 Value = 2;   // пока можно ставить что угодно, но предполагается числовое значение от 0 до 100
+  }
+  reserved 1, 2, 3, 4, 5;
+  repeated TInterest Interests = 6;
+  EGender LookingForGender = 7;
+  uint32 AgeFrom = 8;
+  uint32 AgeTo = 9;
+}
+
+
+message TUser {
+  string UID = 1; // уникальный индентификатор пользователя
+  string Name = 2;
+  string Description = 3;
+  repeated TMetaMedia Media = 4;
+
+  EGender Gender = 5;
+  EGender LookingForGenderDeprecated = 6;
+  uint32 Age = 7;
+
+  TInterests Interests = 8;
+
+  TGeo LastGeo = 10;
+  uint32 SearchDistanceKm = 11;
+}
+
+message TReaction {
+  enum EReactionType {
+    ERT_UNSET = 0;
+    ERT_LIKE = 1;
+    ERT_DISLIKE = 2;
+  }
+  string FromUID = 1;
+  string ToUID = 2;
+  EReactionType ReactionType = 3;
+  bool IsMatch = 4;
+  uint64 Timestamp = 5;
+}
+
+message TMessage {
+  // техническая информация
+  string FromUID = 1;
+  string ToUID = 2;
+  // заполняется на сервере
+  uint64 Timestamp = 4;
+
+  // Контент
+  string Text = 10;
+  TMetaMedia Media = 11;
+}
+
+message TChat {
+  string UID1 = 1;
+  string UID2 = 2;
+  TMessage LastMessage = 3;
+  // можно добавить инфу о теме чата и пр
+}

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <EditText
+        android:id="@+id/inputCode1"
+        style="@style/AppTheme.SecondaryButton"
+        android:layout_width="57dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:hint="0"
+        android:imeOptions="actionNext"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textAppearance="@style/MainFontStyle.ExtraLarge.Bold"
+        android:textCursorDrawable="@drawable/sonder_cursor_color" />
+
+    <EditText
+        android:id="@+id/inputCode2"
+        style="@style/AppTheme.SecondaryButton"
+        android:layout_width="57dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="4dp"
+        android:gravity="center"
+        android:hint="0"
+        android:imeOptions="actionNext"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textAppearance="@style/MainFontStyle.ExtraLarge.Bold"
+        android:textCursorDrawable="@drawable/sonder_cursor_color" />
+
+    <EditText
+        android:id="@+id/inputCode3"
+        style="@style/AppTheme.SecondaryButton"
+        android:layout_width="57dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="4dp"
+        android:gravity="center"
+        android:hint="0"
+        android:imeOptions="actionNext"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textAppearance="@style/MainFontStyle.ExtraLarge.Bold"
+        android:textCursorDrawable="@drawable/sonder_cursor_color" />
+
+    <EditText
+        android:id="@+id/inputCode4"
+        style="@style/AppTheme.SecondaryButton"
+        android:layout_width="57dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="4dp"
+        android:gravity="center"
+        android:hint="0"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textAppearance="@style/MainFontStyle.ExtraLarge.Bold"
+        android:textCursorDrawable="@drawable/sonder_cursor_color" />
+
+    <EditText
+        android:id="@+id/inputCode5"
+        style="@style/AppTheme.SecondaryButton"
+        android:layout_width="57dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="4dp"
+        android:gravity="center"
+        android:hint="0"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textAppearance="@style/MainFontStyle.ExtraLarge.Bold"
+        android:textCursorDrawable="@drawable/sonder_cursor_color" />
+
+    <EditText
+        android:id="@+id/inputCode6"
+        style="@style/AppTheme.SecondaryButton"
+        android:layout_width="57dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="4dp"
+        android:gravity="center"
+        android:hint="0"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textAppearance="@style/MainFontStyle.ExtraLarge.Bold"
+        android:textCursorDrawable="@drawable/sonder_cursor_color" />
+</androidx.appcompat.widget.LinearLayoutCompat>

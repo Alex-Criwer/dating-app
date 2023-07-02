@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_white">#FFFFFF</color>
+    <color name="primary_black">#000000</color>
+    <color name="primary_red">#E94057</color>
+    <color name="primary_red_transparent">#33E94057</color>
+    <color name="primary_pink">#C5226E</color>
+    <color name="primary_red_light">#E26D7D</color>
+    <color name="red">#b71c1c</color>
+    <color name="chat_gray">#C0C0C0</color>
+</resources>

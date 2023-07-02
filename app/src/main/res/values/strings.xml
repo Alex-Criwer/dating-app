@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">sonder-dating-app</string>
+    <string name="agora_app_id">b850046333ba42e591deeb316df0733a</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="sonder_continue">Continue</string>
+
+    <!--Sign up-->
+    <string name="sonder_sign_in_title">Sign in to continue</string>
+    <string name="sonder_sign_up">Sign up</string>
+    <string name="sonder_create_account">Create account</string>
+
+    <string name="sonder_sign_up_with_phone_number_title">My mobile</string>
+    <string name="sonder_sign_up_with_phone_number_subtitle">Please enter your valid phone number. We will send you a 6-digit code to verify your account</string>
+    <string name="sonder_sign_up_with_phone_number_enter_your_phone_number">Enter your phone number</string>
+    <string name="sonder_sign_up_with_phone_number_invalid">Invalid number</string>
+    <string name="sonder_sign_up_with_phone_number_failed">Failed authentication</string>
+
+    <string name="sonder_otp_explanation">Type the verification code \nwe have sent to you</string>
+    <string name="sonder_otp_send_again">Send again</string>
+
+
+    <!--User profile-->
+    <string name="sonder_user_profile_profile_details">Profile details</string>
+    <string name="sonder_user_profile_enter_name">Enter your name</string>
+    <string name="sonder_user_profile_add_description">Add your description</string>
+    <string name="sonder_user_profile_user_man">Man</string>
+    <string name="sonder_user_profile_user_woman">Woman</string>
+    <string name="sonder_user_profile_user_gender_info">My gender is</string>
+    <string name="sonder_user_profile_user_intrested_gender_info">I am looking for</string>
+    <string name="sonder_user_profile_user_apply_settings">Apply</string>
+    <string name="sonder_user_profile_invalid_settings">Invalid settings</string>
+    <string name="sonder_suggested_users_profiles">Profiles</string>
+    <string name="sonder_suggested_users_filters">Filters</string>
+
+    <string name="sonder_distance">Distance</string>
+    <string name="sonder_age">Age</string>
+    <string name="sonder_skill">Skill</string>
+
+    <string name="sonder_chat_messages">Messages</string>
+    <string name="sonder_chat_your_message">Your message</string>
+
+    <string name="sonder_matches">Matches</string>
+</resources>

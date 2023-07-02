@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.fragments.profile.ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="40dp">
+
+        <TextView
+            android:id="@+id/sonder_user_profile_profile_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="@string/sonder_user_profile_profile_details"
+            android:textAppearance="@style/MainFontStyle.ExtraLarge.Bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/sonder_exit_the_app"
+            app:layout_constraintBottom_toBottomOf="@id/sonder_user_profile_profile_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/sonder_user_profile_profile_details" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/user_profile_user_photo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/no_user_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sonder_user_profile_profile_details"
+            app:shapeAppearanceOverlay="@style/circleImageView"
+            app:strokeColor="@color/primary_red"
+            app:strokeWidth="1dp" />
+
+        <LinearLayout
+            android:id="@+id/sonder_ll_name_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_profile_user_photo">
+
+            <EditText
+                android:id="@+id/user_profile_name"
+                style="@style/AppTheme.SecondaryButton"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="3"
+                android:gravity="start|center_vertical"
+                android:hint="@string/sonder_user_profile_enter_name"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/primary_black"
+                android:textCursorDrawable="@drawable/sonder_cursor_color" />
+
+            <EditText
+                android:id="@+id/user_age"
+                style="@style/AppTheme.SecondaryButton"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:digits="0123456789"
+                android:gravity="start|center_vertical"
+                android:hint="@string/sonder_age"
+                android:inputType="number"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/primary_black"
+                android:textCursorDrawable="@drawable/sonder_cursor_color" />
+        </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/user_profile_description"
+            style="@style/AppTheme.SecondaryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="start|center_vertical"
+            android:hint="@string/sonder_user_profile_add_description"
+            android:inputType="textMultiLine|textLongMessage"
+            android:minHeight="56dp"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="4dp"
+            android:textColor="@color/primary_black"
+            android:textCursorDrawable="@drawable/sonder_cursor_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sonder_ll_name_age" />
+
+        <LinearLayout
+            android:id="@+id/sonder_user_genre_ll"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_profile_description">
+
+            <TextView
+                style="@style/MainFontStyle.Medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="start|center_vertical"
+                android:text="@string/sonder_user_profile_user_gender_info" />
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/sonder_toggle_user_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_gravity="end|center_vertical"
+                app:checkedButton="@id/sonder_user_man_gender"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sonder_user_man_gender"
+                    style="@style/AppTheme.SecondaryToggleButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/sonder_user_profile_user_man" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sonder_user_woman_gender"
+                    style="@style/AppTheme.SecondaryToggleButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/sonder_user_profile_user_woman" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/sonder_user_intrested_genre_ll"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sonder_user_genre_ll">
+
+            <TextView
+                style="@style/MainFontStyle.Medium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="start|center_vertical"
+                android:text="@string/sonder_user_profile_user_intrested_gender_info" />
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/sonder_toggle_intrested_user_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_gravity="end|center_vertical"
+                app:selectionRequired="true"
+                app:singleSelection="false">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sonder_user_man_intrested_gender"
+                    style="@style/AppTheme.SecondaryToggleButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/sonder_user_profile_user_man" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sonder_user_woman_intrested_gender"
+                    style="@style/AppTheme.SecondaryToggleButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/sonder_user_profile_user_woman" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/save_user_profile_settings"
+            style="@style/AppTheme.PrimaryButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginVertical="16dp"
+            android:text="@string/sonder_user_profile_user_apply_settings"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sonder_user_intrested_genre_ll" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

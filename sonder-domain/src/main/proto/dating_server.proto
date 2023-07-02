@@ -1,0 +1,221 @@
+syntax = "proto3";
+
+import "user.proto";
+import "misc.proto";
+
+package server;
+
+service DatingServer {
+  rpc GetUser             (GetUserRequest)          returns (GetUserReply) {}
+  rpc RegisterUser        (RegisterUserRequest)     returns (RegisterUserReply) {}
+  rpc UpdateUser          (UpdateUserRequest)       returns (UpdateUserReply) {}
+
+  rpc SearchUsers         (SearchUsersRequest)      returns (SearchUsersReply) {}
+
+  rpc SetMessageToken     (SetMessageTokenRequest)  returns (SetMessageTokenReply) {}
+
+  rpc GetReactions        (GetReactionsRequest)     returns (GetReactionsReply) {}
+  rpc SetReaction         (SetReactionRequest)      returns (SetReactionReply) {}
+
+  rpc SendMessage         (SendMessageRequest)      returns (SendMessageReply) {}
+  rpc GetLastMessages     (GetLastMessagesRequest)  returns (GetLastMessagesReply) {}
+
+  rpc GetChats            (GetChatsRequest)         returns (GetChatsReply) {}
+
+  rpc UploadMedia         (UploadMediaRequest)      returns (UploadMediaReply) {}
+  rpc DownloadMedia       (DownloadMediaRequest)    returns (DownloadMediaReply) {}
+
+  rpc GetUpdates          (GetUpdatesRequest)       returns (stream GetUpdatesReply) {}
+}
+
+message GetUserRequest {
+  string UID = 1;
+
+  misc.TAuth Auth = 10;
+}
+
+message GetUserReply {
+  user.TUser User = 1;
+
+  misc.EReplyStatus Status = 10;
+  misc.TErrorInfo Error = 11;
+}
+
+
+message RegisterUserRequest {
+  user.TUser User = 1;
+
+  misc.TAuth Auth = 10;
+}
+
+message RegisterUserReply {
+  misc.EReplyStatus Status = 10;
+  misc.TErrorInfo Error = 11;
+}
+
+
+message UpdateUserRequest {
+  user.TUser UserDelta = 1;
+
+  misc.TAuth Auth = 10;
+}
+
+message UpdateUserReply {
+  misc.EReplyStatus Status = 10;
+  misc.TErrorInfo Error = 11;
+}
+
+
+message SearchUsersRequest {
+  string UID = 1;
+  user.TGeo Geo = 2;
+  string Distance = 3;
+  // other filters
+
+  misc.TAuth Auth = 10;
+}
+
+message SearchUsersReply {
+  repeated user.TUser Users = 1;
+
+  misc.EReplyStatus Status = 10;
+  misc.TErrorInfo Error = 11;
+}
+
+
+message SetMessageTokenRequest {
+  string UID = 1;
+  string Token = 2;
+
+  misc.TAuth Auth = 10;
+}
+
+message SetMessageTokenReply {
+  misc.EReplyStatus Status = 10;
+  misc.TErrorInfo Error = 11;
+}
+
+
+message GetReactionsRequest {
+  string FromUID = 1; // оба поля проставлять необязательно, но хотя бы одно должно быть
+  string ToUID = 2;
+  bool OnlyMatches = 3; // по дефолту false, работает если указан только один UID
+
+  uint32 Offset = 5; // по дефолту 0
+  uint32 Count = 6;  // по дефолту 100
+
+  misc.TAuth Auth = 10;
+}
+
+message GetReactionsReply {
+  repeated user.TReaction Reactions = 1;
+
+  misc.EReplyStatus Status = 10;
+  misc.TErrorInfo Error = 11;
+}
+
+
+message SetReactionRequest {
+  string FromUID = 1;
+  string ToUID = 2;
+  user.TReaction.EReactionType Reaction = 3;
+
+  misc.TAuth Auth = 10;
+}
+
+message SetReactionReply {
+  bool Match = 1;
+
+  misc.EReplyStatus Status = 10;
+  misc.TErrorInfo Error = 11;
+}
+
+
+message SendMessageRequest {
+  repeated user.TMessage Messages = 1;
+
+  misc.TAuth Auth = 10;
+}
+
+message SendMessageReply {
+  misc.EReplyStatus Status = 10;
+  misc.TErrorInfo Error = 11;
+}
+
+// TODO переименовать GetLastMessages -> GetMessages
+message GetLastMessagesRequest {
+  string FromUID = 1;
+  string ToUID = 2;
+
+  uint32 Offset = 5; // по дефолту 0
+  uint32 Count = 6;  // по дефолту 100
+
+  misc.TAuth Auth = 10;
+}
+
+message GetLastMessagesReply {
+  repeated user.TMessage Messages = 1;
+
+  misc.EReplyStatus Status = 10;
+  misc.TErrorInfo Error = 11;
+}
+
+
+message GetChatsRequest {
+  string UID = 1;
+
+  uint32 Offset = 5; // по дефолту 0
+  uint32 Count = 6;  // по дефолту 100
+
+  misc.TAuth Auth = 10;
+}
+
+message GetChatsReply {
+  repeated user.TChat Chats = 1;
+
+  misc.EReplyStatus Status = 10;
+  misc.TErrorInfo Error = 11;
+}
+
+
+message UploadMediaRequest {
+  user.TLoadingMedia Media = 1;
+
+  misc.TAuth Auth = 10;
+}
+
+message UploadMediaReply {
+  user.TMetaMedia Media = 1;
+
+  misc.EReplyStatus Status = 10;
+  misc.TErrorInfo Error = 11;
+}
+
+
+message DownloadMediaRequest {
+  user.TMetaMedia Media = 1;
+
+  misc.TAuth Auth = 10;
+}
+
+message DownloadMediaReply {
+  user.TLoadingMedia Media = 1;
+
+  misc.EReplyStatus Status = 10;
+  misc.TErrorInfo Error = 11;
+}
+
+message GetUpdatesRequest {
+  string UID = 1;
+
+  misc.TAuth Auth = 10;
+}
+
+message GetUpdatesReply {
+  repeated user.TMessage Messages = 1;
+  repeated user.TReaction Reactions = 2;
+
+  // кажется, они тут бесполезны, но для единообразности оставлю
+  misc.EReplyStatus Status = 10;
+  misc.TErrorInfo Error = 11;
+}

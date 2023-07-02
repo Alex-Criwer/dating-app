@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package config;
+
+message TPrivateData {
+  string CouchbaseUsername = 1;
+  string CouchbasePassword = 2;
+  string CouchbaseAddress = 3;
+  string FirebaseSecret = 4;
+  string FirebaseUrl = 5;
+  string RedisHost = 6;
+  string RedisPort = 7;
+  string RedisPassword = 8;
+}
+
+message TAuthConfig {
+  bool Enabled = 1;
+}
+
+message TQueueClientConfig {
+  message TTopicMap {
+    string From = 1;
+    string To = 2;
+  }
+
+  string UserName = 1;
+  repeated TTopicMap TopicMapping = 2;
+}
+
+
+
+message TStreamingConfig {
+  TAuthConfig Auth = 1;
+  TQueueClientConfig QueueClientConfig = 2;
+
+  string PrivateDataPath = 10;
+}
+
+message TProcessorConfig {
+  TAuthConfig Auth = 1;
+  TQueueClientConfig QueueClientConfig = 2;
+
+  string PrivateDataPath = 10;
+}
+
+message TEngineConfig {
+  TAuthConfig Auth = 1;
+  TQueueClientConfig QueueClientConfig = 2;
+
+  string PrivateDataPath = 10;
+}
+
+message TMediaConfig {
+  TAuthConfig Auth = 1;
+}

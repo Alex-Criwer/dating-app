@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="30dp">
+
+    <TextView
+        android:id="@+id/sonder_user_profile_profile_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/sonder_suggested_users_filters"
+        android:textAppearance="@style/MainFontStyle.ExtraLarge.Bold" />
+
+    <LinearLayout
+        android:id="@+id/sonder_user_intrested_genre_ll"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sonder_user_genre_ll">
+
+        <TextView
+            style="@style/MainFontStyle.Medium"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/sonder_user_profile_user_intrested_gender_info"
+            android:gravity="start|center_vertical"/>
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/sonder_toggle_intrested_user_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            app:selectionRequired="true"
+            app:singleSelection="false"
+            android:layout_gravity="end|center_vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sonder_user_man_intrested_gender"
+                style="@style/AppTheme.SecondaryToggleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/sonder_user_profile_user_man"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sonder_user_woman_intrested_gender"
+                style="@style/AppTheme.SecondaryToggleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/sonder_user_profile_user_woman"/>
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sonder_distance"
+            android:layout_gravity="start"
+            android:textAppearance="@style/MainFontStyle.Large.Bold" />
+
+        <TextView
+            android:id="@+id/sonder_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5km"
+            android:layout_gravity="end|center_vertical"
+            android:textAppearance="@style/MainFontStyle.Medium" />
+    </FrameLayout>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sonder_slider_distance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:labelStyle="@style/SliderTooltip"
+        app:haloColor="@color/primary_red"
+        app:thumbColor="@color/primary_red"
+        app:tickColor="@color/primary_red"
+        app:trackColorInactive="@color/primary_red_transparent"
+        app:trackColorActive="@color/primary_red"
+        android:layout_marginTop="16dp"
+        android:value="5.0"
+        android:valueFrom="0.0"
+        android:stepSize="1.0"
+        android:valueTo="300.0"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sonder_age"
+            android:layout_gravity="start"
+            android:textAppearance="@style/MainFontStyle.Large.Bold" />
+
+        <TextView
+            android:id="@+id/sonder_age_range"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20-28"
+            android:layout_gravity="end|center_vertical"
+            android:textAppearance="@style/MainFontStyle.Medium" />
+    </FrameLayout>
+
+    <com.google.android.material.slider.RangeSlider
+        android:id="@+id/sonder_slider_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:labelStyle="@style/SliderTooltip"
+        app:haloColor="@color/primary_red"
+        app:thumbColor="@color/primary_red"
+        app:tickColor="@color/primary_red"
+        app:trackColorInactive="@color/primary_red_transparent"
+        app:trackColorActive="@color/primary_red"
+        android:layout_marginTop="16dp"
+        android:valueFrom="18.0"
+        android:valueTo="100.0"
+        android:stepSize="1.0"
+        app:values="@array/initial_slider_age_values"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/hobbies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/sonder_hobby_item"
+        android:orientation="horizontal"
+        android:layout_marginVertical="3dp"
+        tools:itemCount="5"
+        app:flexWrap="wrap"
+        app:alignItems="stretch"
+        app:justifyContent="flex_start"
+        android:layout_gravity="center_horizontal"
+        app:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/save_user_profile_settings"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginVertical="16dp"
+        android:text="@string/sonder_user_profile_user_apply_settings"
+        style="@style/AppTheme.PrimaryButton"/>
+</LinearLayout>
